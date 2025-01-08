@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { GridForm } from './components/GridForm';
+import { GridForm } from './components/GridForm.tsx';
 import { MarketInfo } from './components/MarketInfo.tsx';
 import { GridParams, MarketInfo as MarketInfoType } from './types';
-import { queryMarket, startGrid, stopGrid, restartGrid } from './services/api';
+import { queryMarket, startGrid, stopGrid, restartGrid } from './services/api.ts';
 import './App.css';
 
 const App: React.FC = () => {
