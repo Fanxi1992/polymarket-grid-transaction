@@ -72,7 +72,7 @@ export const GridForm: React.FC<Props> = ({
 
   return (
     <form className="grid-form" onSubmit={handleSubmit}>
-      {/* Form fields */}
+      {/* Condition ID */}
       <div className="form-group">
         <label>Condition ID:</label>
         <input
@@ -84,8 +84,9 @@ export const GridForm: React.FC<Props> = ({
         />
       </div>
 
+      {/* Initial Buy */}
       <div className="form-group">
-        <label>Initial Buy:</label>
+        <label>Initial Buy (≥6, 偶数):</label>
         <input
           type="number"
           name="initial_buy"
@@ -97,8 +98,92 @@ export const GridForm: React.FC<Props> = ({
         />
       </div>
 
-      {/* Add other form fields similarly */}
+      {/* Each Buy */}
+      <div className="form-group">
+        <label>Each Buy (≥5):</label>
+        <input
+          type="number"
+          name="each_buy"
+          value={params.each_buy}
+          onChange={handleChange}
+          min="5"
+          required
+        />
+      </div>
 
+      {/* Grid Max Price */}
+      <div className="form-group">
+        <label>Grid Max Price (0-1):</label>
+        <input
+          type="number"
+          name="grid_max_price"
+          value={params.grid_max_price}
+          onChange={handleChange}
+          min="0"
+          max="1"
+          step="0.01"
+          required
+        />
+      </div>
+
+      {/* Grid Min Price */}
+      <div className="form-group">
+        <label>Grid Min Price (0-1):</label>
+        <input
+          type="number"
+          name="grid_min_price"
+          value={params.grid_min_price}
+          onChange={handleChange}
+          min="0"
+          max="1"
+          step="0.01"
+          required
+        />
+      </div>
+
+      {/* Grid Interval */}
+      <div className="form-group">
+        <label>Grid Interval (0-0.1):</label>
+        <input
+          type="number"
+          name="grid_interval"
+          value={params.grid_interval}
+          onChange={handleChange}
+          min="0"
+          max="0.1"
+          step="0.001"
+          required
+        />
+      </div>
+
+      {/* Buy Order Standby Max */}
+      <div className="form-group">
+        <label>Buy Order Standby Max:</label>
+        <input
+          type="number"
+          name="buy_order_standby_max"
+          value={params.buy_order_standby_max}
+          onChange={handleChange}
+          min="1"
+          required
+        />
+      </div>
+
+      {/* Yes or No Selection */}
+      <div className="form-group">
+        <label>Direction:</label>
+        <select
+          name="yes_or_no"
+          value={params.yes_or_no}
+          onChange={handleChange}
+          required
+        >
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      {/* 按钮组 */}
       <div className="form-actions">
         <button 
           type="submit" 
