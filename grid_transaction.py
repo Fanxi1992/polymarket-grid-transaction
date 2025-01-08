@@ -7,6 +7,7 @@ from py_clob_client.clob_types import ApiCreds, OrderArgs, OrderType
 from py_clob_client.order_builder.constants import BUY, SELL
 from py_clob_client.constants import AMOY
 from dotenv import load_dotenv
+from grid_config import CLOB_HOST, CLOB_KEY, API_CREDENTIALS
 
 @dataclass
 class GridParams:
@@ -34,14 +35,12 @@ class GridTrading:
 
     def _init_client(self):
         """初始化交易客户端"""
-        host = "https://clob.polymarket.com"
-        key = 'f14af2100840da79a81fd16a5e7577f25f425192a5cc0b009422853bc42658c4'
         creds = ApiCreds(
-            api_key='09369d75-ba83-dc0e-aae0-a030fdfd9b72',
-            api_secret='UkrywXphcs_1651ekaLsUbhmodtazfoQdAl2dMD6fFE=',
-            api_passphrase='e984ff9344638352a6b96536450e48d350a0a23b977165b94f114a7d0f08da1a',
+            api_key=API_CREDENTIALS['api_key'],
+            api_secret=API_CREDENTIALS['api_secret'],
+            api_passphrase=API_CREDENTIALS['api_passphrase'],
         )
-        self.client = ClobClient(host, key=key, chain_id=AMOY, creds=creds)
+        self.client = ClobClient(CLOB_HOST, key=CLOB_KEY, chain_id=AMOY, creds=creds)
 
     def get_market_info(self) -> List[Dict]:
         """获取市场信息"""
