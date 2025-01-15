@@ -1,0 +1,27 @@
+.market-info {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.market-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.market-row:last-child {
+  border-bottom: none;
+}
+
+.outcome {
+  font-weight: bold;
+  color: #333;
+}
+
+.price {
+  color: #2196F3;
+} 
