@@ -26,6 +26,5 @@ yarn-error.log*
 
 /frontend/node_modules
 
-/frontend
 
 grid_config.py
